@@ -7,7 +7,7 @@ resultado.post('/', (req, res) => {
     const { altura, comprimento, largura} = req.body;
     const volume = Calculadora.Volume(
         parseFloat(altura), parseFloat(comprimento), parseFloat(largura));
-    res.send(`O volume é ${volume}`);
+    res.redirect(`/resultado.html?volume=${volume}`);
 });
 
 module.exports = resultado;
